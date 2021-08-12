@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import Modal from '../UI/Modal';
 import BasketItem from './BasketItem';
 import BasketContext from '../../store/basket-context';
+import Checkout from './Checkout';
 
 export default function Basket(props) {
   const basketCtx = useContext(BasketContext);
@@ -40,6 +41,7 @@ export default function Basket(props) {
         <span>Összeg</span>
         <span>{totalAmount}</span>
       </div>
+      <Checkout />
       <div className="actions">
         <button className="button--alt" onClick={props.onClose}>
           Bezár
