@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 
 import Modal from '../UI/Modal';
 import BasketItem from './BasketItem';
@@ -6,6 +6,7 @@ import BasketContext from '../../store/basket-context';
 import Checkout from './Checkout';
 
 export default function Basket(props) {
+  const [isCheckout, setIsCheckout] = useState(false);
   const basketCtx = useContext(BasketContext);
 
   const totalAmount = `HUF ${basketCtx.totalAmount}`;
@@ -17,6 +18,10 @@ export default function Basket(props) {
 
   const basketItemAddHandler = (item) => {
     basketCtx.addItem({ ...item, amount: 1 });
+  };
+
+  const orderHandler = () => {
+    setIsCheckout(true);
   };
 
   const basketItems = (
@@ -41,13 +46,19 @@ export default function Basket(props) {
         <span>Összeg</span>
         <span>{totalAmount}</span>
       </div>
-      <Checkout />
-      <div className="actions">
-        <button className="button--alt" onClick={props.onClose}>
-          Bezár
-        </button>
-        {hasItems && <button className="button">Megrendel</button>}
-      </div>
+      {isCheckout && <Checkout />}
+      {!isCheckout && (
+        <div className="actions">
+          <button className="button--alt" onClick={props.onClose}>
+            Bezár
+          </button>
+          {hasItems && (
+            <button className="button" onClick={orderHandler}>
+              Megrendel
+            </button>
+          )}
+        </div>
+      )}
     </Modal>
   );
 }
