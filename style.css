@@ -524,7 +524,6 @@ body {
   background-color: var(--button-color);
   border: var(--button-border);
   padding: 0.5rem 2rem;
-  border-radius: 25px;
   margin-left: 1rem;
 }
 
