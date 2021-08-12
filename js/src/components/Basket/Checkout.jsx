@@ -1,6 +1,6 @@
-export default function Checkout() {
+export default function Checkout(props) {
   return (
-    <form>
+    <form className="form">
       <div className="control">
         <label htmlFor="name">Nev</label>
         <input type="text" id="name" />
@@ -17,6 +17,9 @@ export default function Checkout() {
         <label htmlFor="city">Varos</label>
         <input type="text" id="city" />
       </div>
+      <button type="button" onClick={props.onCancel}>
+        Törlés
+      </button>
       <button>Megrendelem</button>
     </form>
   );

@@ -344,17 +344,23 @@ template {
 }
 
 :root {
-  --imperial-red: hsla(355, 78%, 56%, 1);
-  --honeydew: hsla(105, 55%, 96%, 1);
-  --powder-blue: hsla(182, 43%, 76%, 1);
-  --celadon-blue: hsla(203, 39%, 44%, 1);
-  --prussian-blue: hsla(215, 50%, 23%, 1);
-  --light-gray: hsl(235, 15%, 70%);
-  --purple: hsl(230, 33%, 21%);
-  --background-color: var(--purple);
-  --text-color: var(--light-gray);
-  --link-color: var(--imperial-red);
-  --active-link-color: var(--celadon-blue);
+  --myorange: #e64a19;
+  --mylazac: #ffccbc;
+  --myblack: #212121;
+  --myblue: #448aff;
+  --mydarkblue: #186af8;
+  --mygrey: #bdbdbd;
+  --background-color: var(--myorange);
+  --background-color-light: var(--mygrey);
+  --text-color: var(--myblack);
+  --button-color: var(--myblue);
+  --basket-color: var(--mylazac);
+  --itemlist-background: var(--mylazac);
+  --box-shadow: 2px 2px 10px var(--myblack);
+  --button-border: 1px solid var(--myblue);
+  --border-bottom: 2px solid var(--myorange);
+  --border: 1px solid var(--myorange);
+  --bakckdrop-background: rgba(0, 0, 0, 0.75);
 }
 
 * {
@@ -368,7 +374,7 @@ html {
 }
 
 body {
-  background-color: grey;
+  background-color: var(--background-color-light);
 }
 
 .header {
@@ -376,22 +382,21 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 5rem;
-  background-color: #8a2b06;
-  color: white;
+  height: 8rem;
+  background-color: var(--background-color);
+  color: var(--text-color);
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
-  padding: 0 10%;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-  z-index: 10;
+  padding: 0 1rem;
+  box-shadow: var(--box-shadow);
+  z-index: 2;
 }
 
 .button {
   cursor: pointer;
-  font: inherit;
   border: none;
-  background-color: #4d1601;
+  background-color: var(--button-color);
   color: white;
   padding: 0.75rem 3rem;
   display: flex;
@@ -402,7 +407,7 @@ body {
 
 .button:hover,
 .button:active {
-  background-color: #2c0d00;
+  background-color: var(--mydarkblue);
 }
 
 .icon {
@@ -412,7 +417,7 @@ body {
 }
 
 .badge {
-  background-color: #b94517;
+  background-color: var(--myblack);
   padding: 0.25rem 1rem;
   margin-left: 1rem;
   font-weight: bold;
@@ -420,54 +425,13 @@ body {
 
 .button:hover .badge,
 .button:active .badge {
-  background-color: #92320c;
-}
-
-.bump {
-  animation: bump 300ms ease-out;
-}
-
-@keyframes bump {
-  0% {
-    transform: scale(1);
-  }
-  10% {
-    transform: scale(0.9);
-  }
-  30% {
-    transform: scale(1.1);
-  }
-  50% {
-    transform: scale(1.15);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-.text {
-  text-align: center;
-  max-width: 45rem;
-  width: 90%;
-  margin: auto;
-  margin-top: -10rem;
-  position: relative;
-  background-color: #383838;
-  color: white;
-  border-radius: 14px;
-  padding: 1rem;
-  box-shadow: 0 1px 18px 10px rgba(0, 0, 0, 0.25);
-}
-
-.text h2 {
-  font-size: 2rem;
-  margin-top: 0;
+  background-color: var(--mygrey);
 }
 
 .products {
   max-width: 60rem;
-  width: 90%;
-  margin: 2rem auto;
-  animation: meals-appear 1s ease-out forwards;
+  width: 80%;
+  margin: 3rem auto;
 }
 
 .products ul {
@@ -476,19 +440,9 @@ body {
   padding: 0;
 }
 
-@keyframes products-appear {
-  from {
-    opacity: 0;
-    transform: translateY(3rem);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 .card {
   padding: 1rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  box-shadow: var(--box-shadow);
   background-color: white;
 }
 
@@ -502,44 +456,53 @@ body {
 
 .product h3 {
   margin: 0 0 0.25rem 0;
+  margin-top: 2rem;
 }
 
 .description {
   font-style: italic;
+  margin-top: 2rem;
 }
 
 .price {
-  margin-top: 0.25rem;
+  margin-top: 2rem;
   font-weight: bold;
-  color: #ad5502;
-  font-size: 1.25rem;
+  color: var(--myorange);
+  font-size: 1.5rem;
 }
 
 .form {
-  text-align: right;
+  text-align: center;
+  font-weight: bold;
+}
+
+.form input {
+  width: 2rem;
+  margin: 1rem;
 }
 
 .form button {
   font: inherit;
   cursor: pointer;
-  background-color: #8a2b06;
-  border: 1px solid #8a2b06;
+  background-color: var(--button-color);
+  border: var(--button-border);
   color: white;
-  padding: 0.25rem 2rem;
+  margin: 1rem;
+  padding: 0.5rem 2rem;
   font-weight: bold;
 }
 
 .form button:hover,
 .form button:active {
-  background-color: #641e03;
-  border-color: #641e03;
+  background-color: var(--mydarkblue);
+  border-color: var(--mydarkblue);
 }
 
 .basket-items {
   list-style: none;
-  margin: 0;
+  margin: 1rem;
   padding: 0;
-  max-height: 20rem;
+  max-height: 30rem;
   overflow: scroll;
 }
 
@@ -547,9 +510,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-weight: bold;
-  font-size: 1.5rem;
-  margin: 1rem 0;
+  font-size: 1rem;
+  margin: 1rem;
 }
 
 .actions {
@@ -557,10 +519,9 @@ body {
 }
 
 .actions button {
-  font: inherit;
   cursor: pointer;
-  background-color: transparent;
-  border: 1px solid #8a2b06;
+  background-color: var(--button-color);
+  border: var(--button-border);
   padding: 0.5rem 2rem;
   border-radius: 25px;
   margin-left: 1rem;
@@ -568,17 +529,17 @@ body {
 
 .actions button:hover,
 .actions button:active {
-  background-color: #5a1a01;
-  border-color: #5a1a01;
+  background-color: var(--mydarkblue);
+  border-color: var(--mydarkblue);
   color: white;
 }
 
 .actions .button--alt {
-  color: #8a2b06;
+  color: white;
 }
 
 .actions .button {
-  background-color: #8a2b06;
+  background-color: var(--button-color);
   color: white;
 }
 
@@ -589,7 +550,7 @@ body {
   width: 100%;
   height: 100vh;
   z-index: 20;
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: var(--bakckdrop-background);
 }
 
 .modal {
@@ -599,9 +560,8 @@ body {
   width: 90%;
   background-color: white;
   padding: 1rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-  z-index: 30;
-  animation: slide-down 300ms ease-out forwards;
+  box-shadow: var(--box-shadow);
+  z-index: 20;
 }
 
 @media (min-width: 768px) {
@@ -610,28 +570,18 @@ body {
     left: calc(50% - 20rem);
   }
 }
-@keyframes slide-down {
-  from {
-    opacity: 0;
-    transform: translateY(-3rem);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 .basket-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid #8a2b06;
+  border-bottom: var(--border-bottom);
   padding: 1rem 0;
   margin: 1rem 0;
 }
 
 .basket-item h2 {
-  margin: 0 0 0.5rem 0;
-  color: #363636;
+  margin: 0 0 1rem 0;
+  color: var(--myblack);
 }
 
 .summary {
@@ -643,7 +593,7 @@ body {
 
 .price {
   font-weight: bold;
-  color: #8a2b06;
+  color: var(--myorange);
 }
 
 .amount {
@@ -658,17 +608,11 @@ body {
   flex-direction: column;
 }
 
-@media (min-width: 768px) {
-  .actions {
-    flex-direction: row;
-  }
-}
 .basket-item button {
-  font: inherit;
   font-weight: bold;
   font-size: 1.25rem;
   color: #8a2b06;
-  border: 1px solid #8a2b06;
+  border: var(--border);
   width: 3rem;
   text-align: center;
   background-color: transparent;
@@ -679,8 +623,46 @@ body {
 
 .basket-item button:hover,
 .basket-item button:active {
-  background-color: #8a2b06;
+  background-color: var(--button-color);
   color: white;
 }
 
-/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../sass/_normalize.scss%22,%22../sass/_variables.scss%22,%22../sass/_layout.scss%22,%22../sass/_header.scss%22,%22../sass/_headerBasketButton.scss%22,%22../sass/_productsText.scss%22,%22../sass/_availableProducts.scss%22,%22../sass/_card.scss%22,%22../sass/_productItem.scss%22,%22../sass/_productItemForm.scss%22,%22../sass/_basket.scss%22,%22../sass/_modal.scss%22,%22../sass/_basketItem.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAAA;AAEA;AAAA;AAGA;AAAA;AAAA;AAAA;AAKA;EACE;AAAmB;EACnB;AAAgC;;;AAGlC;AAAA;AAGA;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAAA;AAAA;AAKA;EACE;EACA;;;AAGF;AAAA;AAGA;AAAA;AAAA;AAAA;AAKA;EACE;AAAyB;EACzB;AAAW;EACX;AAAmB;;;AAGrB;AAAA;AAAA;AAAA;AAKA;EACE;AAAmC;EACnC;AAAgB;;;AAGlB;AAAA;AAGA;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAAA;AAAA;AAKA;EACE;AAAqB;EACrB;AAA4B;EAC5B;AAAmC;;;AAGrC;AAAA;AAAA;AAIA;AAAA;EAEE;;;AAGF;AAAA;AAAA;AAAA;AAKA;AAAA;AAAA;EAGE;AAAmC;EACnC;AAAgB;;;AAGlB;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAAA;AAAA;AAKA;AAAA;EAEE;EACA;EACA;EACA;;;AAGF;EACE;;;AAGF;EACE;;;AAGF;AAAA;AAGA;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAGA;AAAA;AAAA;AAAA;AAKA;AAAA;AAAA;AAAA;AAAA;EAKE;AAAsB;EACtB;AAAiB;EACjB;AAAmB;EACnB;AAAW;;;AAGb;AAAA;AAAA;AAAA;AAKA;AAAA;AAEE;EACA;;;AAGF;AAAA;AAAA;AAAA;AAKA;AAAA;AAEE;EACA;;;AAGF;AAAA;AAAA;AAIA;AAAA;AAAA;AAAA;EAIE;;;AAGF;AAAA;AAAA;AAIA;AAAA;AAAA;AAAA;EAIE;EACA;;;AAGF;AAAA;AAAA;AAIA;AAAA;AAAA;AAAA;EAIE;;;AAGF;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAAA;AAAA;AAAA;AAAA;AAOA;EACE;AAAwB;EACxB;AAAgB;EAChB;AAAgB;EAChB;AAAiB;EACjB;AAAY;EACZ;AAAqB;;;AAGvB;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAAA;AAAA;AAKA;AAAA;EAEE;AAAwB;EACxB;AAAY;;;AAGd;AAAA;AAAA;AAIA;AAAA;EAEE;;;AAGF;AAAA;AAAA;AAAA;AAKA;EACE;AAA+B;EAC/B;AAAsB;;;AAGxB;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAAA;AAAA;AAKA;EACE;AAA4B;EAC5B;AAAe;;;AAGjB;AAAA;AAGA;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAGA;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAAA;EAGE;;;AClWF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;ACZF;EACE;EACA;EACA;;;AAGF;EACE;;;AAGF;EACE;;;ACXF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;ACbF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGF;AAAA;EAEE;;;AAGF;EACE;EACA;EACA;;;AAGF;EACE;EACA;EACA;EACA;;;AAGF;AAAA;EAEE;;;AAGF;EACE;;;AAGF;EACE;IACE;;EAEF;IACE;;EAEF;IACE;;EAEF;IACE;;EAEF;IACE;;;ACtDJ;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGF;EACE;EACA;;;AChBF;EACE;EACA;EACA;EACA;;;AAGF;EACE;EACA;EACA;;;AAGF;EACE;IACE;IACA;;EAGF;IACE;IACA;;;ACrBJ;EACE;EACA;EACA;;;ACHF;EACE;EACA;EACA;EACA;EACA;;;AAGF;EACE;;;AAGF;EACE;;;AAGF;EACE;EACA;EACA;EACA;;;ACpBF;EACE;;;AAGF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGF;AAAA;EAEE;EACA;;;ACjBF;EACE;EACA;EACA;EACA;EACA;;;AAGF;EACE;EACA;EACA;EACA;EACA;EACA;;;AAGF;EACE;;;AAGF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGF;AAAA;EAEE;EACA;EACA;;;AAGF;EACE;;;AAGF;EACE;EACA;;;AC5CF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGF;EACE;IACE;IACA;;;AAIJ;EACE;IACE;IACA;;EAEF;IACE;IACA;;;ACpCJ;EACE;EACA;EACA;EACA;EACA;EACA;;;AAGF;EACE;EACA;;;AAGF;EACE;EACA;EACA;EACA;;;AAGF;EACE;EACA;;;AAGF;EACE;EACA;EACA;EACA;;;AAGF;EACE;EACA;;;AAGF;EACE;IACE;;;AAIJ;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGF;AAAA;EAEE;EACA%22,%22file%22:%22style.css%22%7D */
+.form {
+  margin: 1rem 0;
+  height: 19rem;
+  overflow: auto;
+}
+
+.control {
+  margin-bottom: 0.5rem;
+}
+
+.control label {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+  display: block;
+}
+
+.control input {
+  font: inherit;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 20rem;
+  max-width: 100%;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.actions button {
+  font: inherit;
+  color: var(--button-color);
+  cursor: pointer;
+  border: none;
+  padding: 0.5rem 2rem;
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../sass/_normalize.scss%22,%22../sass/_variables.scss%22,%22../sass/_layout.scss%22,%22../sass/_header.scss%22,%22../sass/_headerBasketButton.scss%22,%22../sass/_availableProducts.scss%22,%22../sass/_card.scss%22,%22../sass/_productItem.scss%22,%22../sass/_productItemForm.scss%22,%22../sass/_basket.scss%22,%22../sass/_modal.scss%22,%22../sass/_basketItem.scss%22,%22../sass/_checkout.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAAA;AAEA;AAAA;AAGA;AAAA;AAAA;AAAA;AAKA;EACE;AAAmB;EACnB;AAAgC;;;AAGlC;AAAA;AAGA;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAAA;AAAA;AAKA;EACE;EACA;;;AAGF;AAAA;AAGA;AAAA;AAAA;AAAA;AAKA;EACE;AAAyB;EACzB;AAAW;EACX;AAAmB;;;AAGrB;AAAA;AAAA;AAAA;AAKA;EACE;AAAmC;EACnC;AAAgB;;;AAGlB;AAAA;AAGA;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAAA;AAAA;AAKA;EACE;AAAqB;EACrB;AAA4B;EAC5B;AAAmC;;;AAGrC;AAAA;AAAA;AAIA;AAAA;EAEE;;;AAGF;AAAA;AAAA;AAAA;AAKA;AAAA;AAAA;EAGE;AAAmC;EACnC;AAAgB;;;AAGlB;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAAA;AAAA;AAKA;AAAA;EAEE;EACA;EACA;EACA;;;AAGF;EACE;;;AAGF;EACE;;;AAGF;AAAA;AAGA;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAGA;AAAA;AAAA;AAAA;AAKA;AAAA;AAAA;AAAA;AAAA;EAKE;AAAsB;EACtB;AAAiB;EACjB;AAAmB;EACnB;AAAW;;;AAGb;AAAA;AAAA;AAAA;AAKA;AAAA;AAEE;EACA;;;AAGF;AAAA;AAAA;AAAA;AAKA;AAAA;AAEE;EACA;;;AAGF;AAAA;AAAA;AAIA;AAAA;AAAA;AAAA;EAIE;;;AAGF;AAAA;AAAA;AAIA;AAAA;AAAA;AAAA;EAIE;EACA;;;AAGF;AAAA;AAAA;AAIA;AAAA;AAAA;AAAA;EAIE;;;AAGF;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAAA;AAAA;AAAA;AAAA;AAOA;EACE;AAAwB;EACxB;AAAgB;EAChB;AAAgB;EAChB;AAAiB;EACjB;AAAY;EACZ;AAAqB;;;AAGvB;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAAA;AAAA;AAKA;AAAA;EAEE;AAAwB;EACxB;AAAY;;;AAGd;AAAA;AAAA;AAIA;AAAA;EAEE;;;AAGF;AAAA;AAAA;AAAA;AAKA;EACE;AAA+B;EAC/B;AAAsB;;;AAGxB;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAAA;AAAA;AAKA;EACE;AAA4B;EAC5B;AAAe;;;AAGjB;AAAA;AAGA;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAGA;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAAA;EAGE;;;ACnWF;EACE;EACA;EACA;EACA;EACA;EACA;EAEA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;AClBF;EACE;EACA;EACA;;;AAGF;EACE;;;AAGF;EACE;;;ACXF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;ACbF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGF;AAAA;EAEE;;;AAGF;EACE;EACA;EACA;;;AAGF;EACE;EACA;EACA;EACA;;;AAGF;AAAA;EAEE;;;AChCF;EACE;EACA;EACA;;;AAGF;EACE;EACA;EACA;;;ACTF;EACE;EACA;EACA;;;ACHF;EACE;EACA;EACA;EACA;EACA;;;AAGF;EACE;EACA;;;AAGF;EACE;EACA;;;AAGF;EACE;EACA;EACA;EACA;;;ACtBF;EACE;EACA;;;AAGF;EACE;EACA;;;AAGF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGF;AAAA;EAEE;EACA;;;ACxBF;EACE;EACA;EACA;EACA;EACA;;;AAGF;EACE;EACA;EACA;EACA;EACA;;;AAGF;EACE;;;AAGF;EACE;EACA;EACA;EACA;EACA;EACA;;;AAGF;AAAA;EAEE;EACA;EACA;;;AAGF;EACE;;;AAGF;EACE;EACA;;;AC1CF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGF;EACE;IACE;IACA;;;ACxBJ;EACE;EACA;EACA;EACA;EACA;EACA;;;AAGF;EACE;EACA;;;AAGF;EACE;EACA;EACA;EACA;;;AAGF;EACE;EACA;;;AAGF;EACE;EACA;EACA;EACA;;;AAGF;EACE;EACA;;;AAGF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGF;AAAA;EAEE;EACA;;;ACtDF;EACE;EACA;EACA;;;AAGF;EACE;;;AAGF;EACE;EACA;EACA;;;AAGF;EACE;EACA;EACA;EACA;EACA;;;AAGF;EACE;EACA;EACA;;;AAGF;EACE;EACA;EACA;EACA;EACA%22,%22file%22:%22style.css%22%7D */

@@ -1,8 +1,8 @@
 .basket-items {
   list-style: none;
-  margin: 0;
+  margin: 1rem;
   padding: 0;
-  max-height: 20rem;
+  max-height: 30rem;
   overflow: scroll;
 }
 
@@ -10,9 +10,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-weight: bold;
-  font-size: 1.5rem;
-  margin: 1rem 0;
+  font-size: 1rem;
+  margin: 1rem;
 }
 
 .actions {
@@ -20,10 +19,9 @@
 }
 
 .actions button {
-  font: inherit;
   cursor: pointer;
-  background-color: transparent;
-  border: 1px solid #8a2b06;
+  background-color: var(--button-color);
+  border: var(--button-border);
   padding: 0.5rem 2rem;
   border-radius: 25px;
   margin-left: 1rem;
@@ -31,16 +29,16 @@
 
 .actions button:hover,
 .actions button:active {
-  background-color: #5a1a01;
-  border-color: #5a1a01;
+  background-color: var(--mydarkblue);
+  border-color: var(--mydarkblue);
   color: white;
 }
 
 .actions .button--alt {
-  color: #8a2b06;
+  color: white;
 }
 
 .actions .button {
-  background-color: #8a2b06;
+  background-color: var(--button-color);
   color: white;
 }

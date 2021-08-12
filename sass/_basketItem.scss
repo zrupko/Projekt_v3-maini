@@ -2,14 +2,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid #8a2b06;
+  border-bottom: var(--border-bottom);
   padding: 1rem 0;
   margin: 1rem 0;
 }
 
 .basket-item h2 {
-  margin: 0 0 0.5rem 0;
-  color: #363636;
+  margin: 0 0 1rem 0;
+  color: var(--myblack);
 }
 
 .summary {
@@ -21,7 +21,7 @@
 
 .price {
   font-weight: bold;
-  color: #8a2b06;
+  color: var(--myorange);
 }
 
 .amount {
@@ -36,18 +36,11 @@
   flex-direction: column;
 }
 
-@media (min-width: 768px) {
-  .actions {
-    flex-direction: row;
-  }
-}
-
 .basket-item button {
-  font: inherit;
   font-weight: bold;
   font-size: 1.25rem;
   color: #8a2b06;
-  border: 1px solid #8a2b06;
+  border: var(--border);
   width: 3rem;
   text-align: center;
   background-color: transparent;
@@ -58,6 +51,6 @@
 
 .basket-item button:hover,
 .basket-item button:active {
-  background-color: #8a2b06;
+  background-color: var(--button-color);
   color: white;
 }

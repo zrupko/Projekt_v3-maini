@@ -1,19 +1,26 @@
 .form {
-  text-align: right;
+  text-align: center;
+  font-weight: bold;
+}
+
+.form input {
+  width: 2rem;
+  margin: 1rem;
 }
 
 .form button {
   font: inherit;
   cursor: pointer;
-  background-color: #8a2b06;
-  border: 1px solid #8a2b06;
+  background-color: var(--button-color);
+  border: var(--button-border);
   color: white;
-  padding: 0.25rem 2rem;
+  margin: 1rem;
+  padding: 0.5rem 2rem;
   font-weight: bold;
 }
 
 .form button:hover,
 .form button:active {
-  background-color: #641e03;
-  border-color: #641e03;
+  background-color: var(--mydarkblue);
+  border-color: var(--mydarkblue);
 }

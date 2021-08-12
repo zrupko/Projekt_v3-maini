@@ -46,7 +46,7 @@ export default function Basket(props) {
         <span>Összeg</span>
         <span>{totalAmount}</span>
       </div>
-      {isCheckout && <Checkout />}
+      {isCheckout && <Checkout onCancel={props.onClose} />}
       {!isCheckout && (
         <div className="actions">
           <button className="button--alt" onClick={props.onClose}>

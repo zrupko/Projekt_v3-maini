@@ -1,18 +1,20 @@
-// CSS-Variablen
 :root {
-  --imperial-red: hsla(355, 78%, 56%, 1);
-  --honeydew: hsla(105, 55%, 96%, 1);
-  --powder-blue: hsla(182, 43%, 76%, 1);
-  --celadon-blue: hsla(203, 39%, 44%, 1);
-  --prussian-blue: hsla(215, 50%, 23%, 1);
-  --light-gray: hsl(235, 15%, 70%);
-  --purple: hsl(230, 33%, 21%);
-  --background-color: var(--purple);
-  --text-color: var(--light-gray);
-  --link-color: var(--imperial-red);
-  --active-link-color: var(--celadon-blue);
+  --myorange: #e64a19;
+  --mylazac: #ffccbc;
+  --myblack: #212121;
+  --myblue: #448aff;
+  --mydarkblue: #186af8;
+  --mygrey: #bdbdbd;
+
+  --background-color: var(--myorange);
+  --background-color-light: var(--mygrey);
+  --text-color: var(--myblack);
+  --button-color: var(--myblue);
+  --basket-color: var(--mylazac);
+  --itemlist-background: var(--mylazac);
+  --box-shadow: 2px 2px 10px var(--myblack);
+  --button-border: 1px solid var(--myblue);
+  --border-bottom: 2px solid var(--myorange);
+  --border: 1px solid var(--myorange);
+  --bakckdrop-background: rgba(0, 0, 0, 0.75);
 }
-
-$content-width: 50rem;
-
-$mobile-max-width: 600px;
