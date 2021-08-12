@@ -2,7 +2,7 @@ const BasketItem = (props) => {
   const price = `HUF ${props.price}`;
 
   return (
-    <li className="cart-item">
+    <li className="basket-item">
       <div>
         <h2>{props.name}</h2>
         <div className="summary">

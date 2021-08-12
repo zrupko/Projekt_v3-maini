@@ -15,15 +15,15 @@ export default function Basket(props) {
   const basketItemAddHandler = (item) => {};
 
   const basketItems = (
-    <ul>
+    <ul className="basket-items">
       {basketCtx.items.map((item) => (
         <BasketItem
           key={item.id}
           name={item.name}
           amount={item.amount}
           price={item.price}
-          onRemove={basketItemRemoveHandler}
-          onAdd={basketItemAddHandler}
+          onRemove={basketItemRemoveHandler.bind(null, item.id)}
+          onAdd={basketItemAddHandler.bind(null, item)}
         />
       ))}
     </ul>
