@@ -1,13 +1,31 @@
+import { useContext } from 'react';
+
 import Modal from '../UI/Modal';
+import BasketItem from './BasketItem';
+import BasketContext from '../../store/basket-context';
 
 export default function Basket(props) {
+  const basketCtx = useContext(BasketContext);
+
+  const totalAmount = `HUF ${basketCtx.totalAmount}`;
+  const hasItems = basketCtx.items.length > 0;
+
+  const basketItemRemoveHandler = (id) => {};
+
+  const basketItemAddHandler = (item) => {};
+
   const basketItems = (
     <ul>
-      {[{ id: 'c1', name: 'Müanyag ablak', amount: 2, price: 12.99 }].map(
-        (item) => (
-          <li>{item.name}</li>
-        )
-      )}
+      {basketCtx.items.map((item) => (
+        <BasketItem
+          key={item.id}
+          name={item.name}
+          amount={item.amount}
+          price={item.price}
+          onRemove={basketItemRemoveHandler}
+          onAdd={basketItemAddHandler}
+        />
+      ))}
     </ul>
   );
 
@@ -16,13 +34,13 @@ export default function Basket(props) {
       {basketItems}
       <div className="total">
         <span>Összeg</span>
-        <span>123.123</span>
+        <span>{totalAmount}</span>
       </div>
       <div className="actions">
         <button className="button--alt" onClick={props.onClose}>
           Bezár
         </button>
-        <button className="button">Megrendel</button>
+        {hasItems && <button className="button">Megrendel</button>}
       </div>
     </Modal>
   );

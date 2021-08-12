@@ -44,7 +44,6 @@ h1 {
    * 2. Show the overflow in Edge and IE.
    */
 hr {
-  -webkit-box-sizing: content-box;
   box-sizing: content-box;
   /* 1 */
   height: 0;
@@ -82,7 +81,6 @@ abbr[title] {
   /* 1 */
   text-decoration: underline;
   /* 2 */
-  -webkit-text-decoration: underline dotted;
   text-decoration: underline dotted;
   /* 2 */
 }
@@ -230,7 +228,6 @@ fieldset {
    *    `fieldset` elements in all browsers.
    */
 legend {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   /* 1 */
   color: inherit;
@@ -265,7 +262,6 @@ textarea {
    */
 [type=checkbox],
 [type=radio] {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   /* 1 */
   padding: 0;
@@ -344,7 +340,6 @@ template {
 *,
 *:before,
 *:after {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -365,7 +360,6 @@ template {
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -385,17 +379,10 @@ body {
   height: 5rem;
   background-color: #8a2b06;
   color: white;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   padding: 0 10%;
-  -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
   z-index: 10;
 }
@@ -407,13 +394,8 @@ body {
   background-color: #4d1601;
   color: white;
   padding: 0.75rem 3rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
   justify-content: space-around;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   font-weight: bold;
 }
@@ -442,51 +424,23 @@ body {
 }
 
 .bump {
-  -webkit-animation: bump 300ms ease-out;
   animation: bump 300ms ease-out;
 }
 
-@-webkit-keyframes bump {
-  0% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
-  10% {
-    -webkit-transform: scale(0.9);
-    transform: scale(0.9);
-  }
-  30% {
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
-  }
-  50% {
-    -webkit-transform: scale(1.15);
-    transform: scale(1.15);
-  }
-  100% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
-}
 @keyframes bump {
   0% {
-    -webkit-transform: scale(1);
     transform: scale(1);
   }
   10% {
-    -webkit-transform: scale(0.9);
     transform: scale(0.9);
   }
   30% {
-    -webkit-transform: scale(1.1);
     transform: scale(1.1);
   }
   50% {
-    -webkit-transform: scale(1.15);
     transform: scale(1.15);
   }
   100% {
-    -webkit-transform: scale(1);
     transform: scale(1);
   }
 }
@@ -501,7 +455,6 @@ body {
   color: white;
   border-radius: 14px;
   padding: 1rem;
-  -webkit-box-shadow: 0 1px 18px 10px rgba(0, 0, 0, 0.25);
   box-shadow: 0 1px 18px 10px rgba(0, 0, 0, 0.25);
 }
 
@@ -514,7 +467,6 @@ body {
   max-width: 60rem;
   width: 90%;
   margin: 2rem auto;
-  -webkit-animation: meals-appear 1s ease-out forwards;
   animation: meals-appear 1s ease-out forwards;
 }
 
@@ -524,43 +476,24 @@ body {
   padding: 0;
 }
 
-@-webkit-keyframes products-appear {
-  from {
-    opacity: 0;
-    -webkit-transform: translateY(3rem);
-    transform: translateY(3rem);
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-}
 @keyframes products-appear {
   from {
     opacity: 0;
-    -webkit-transform: translateY(3rem);
     transform: translateY(3rem);
   }
   to {
     opacity: 1;
-    -webkit-transform: translateY(0);
     transform: translateY(0);
   }
 }
 .card {
   padding: 1rem;
-  -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
   background-color: white;
 }
 
 .product {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
   margin: 1rem;
   padding-bottom: 1rem;
@@ -611,14 +544,8 @@ body {
 }
 
 .total {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   font-weight: bold;
   font-size: 1.5rem;
@@ -672,10 +599,8 @@ body {
   width: 90%;
   background-color: white;
   padding: 1rem;
-  -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
   z-index: 30;
-  -webkit-animation: slide-down 300ms ease-out forwards;
   animation: slide-down 300ms ease-out forwards;
 }
 
@@ -685,30 +610,79 @@ body {
     left: calc(50% - 20rem);
   }
 }
-@-webkit-keyframes slide-down {
-  from {
-    opacity: 0;
-    -webkit-transform: translateY(-3rem);
-    transform: translateY(-3rem);
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-}
 @keyframes slide-down {
   from {
     opacity: 0;
-    -webkit-transform: translateY(-3rem);
     transform: translateY(-3rem);
   }
   to {
     opacity: 1;
-    -webkit-transform: translateY(0);
     transform: translateY(0);
   }
 }
-/*# sourceMappingURL=style.css.map */
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #8a2b06;
+  padding: 1rem 0;
+  margin: 1rem 0;
+}
 
-/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../sass/style.css%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAAA;AACA;AAAA;AAEA;AAAA;AAAA;AAAA;AAIA;EACE;AACA;EACA;AACA;;;AAGF;AAAA;AAEA;AAAA;AAAA;AAGA;EACE;;;AAGF;AAAA;AAAA;AAGA;EACE;;;AAGF;AAAA;AAAA;AAAA;AAIA;EACE;EACA;;;AAGF;AAAA;AAEA;AAAA;AAAA;AAAA;AAIA;EACE;EACQ;AACR;EACA;AACA;EACA;AACA;;;AAGF;AAAA;AAAA;AAAA;AAIA;EACE;AACA;EACA;AACA;;;AAGF;AAAA;AAEA;AAAA;AAAA;AAGA;EACE;;;AAGF;AAAA;AAAA;AAAA;AAIA;EACE;AACA;EACA;AACA;EACA;EACQ;AACR;;;AAGF;AAAA;AAAA;AAGA;AAAA;EAEE;;;AAGF;AAAA;AAAA;AAAA;AAIA;AAAA;AAAA;EAGE;AACA;EACA;AACA;;;AAGF;AAAA;AAAA;AAGA;EACE;;;AAGF;AAAA;AAAA;AAAA;AAIA;AAAA;EAEE;EACA;EACA;EACA;;;AAGF;EACE;;;AAGF;EACE;;;AAGF;AAAA;AAEA;AAAA;AAAA;AAGA;EACE;;;AAGF;AAAA;AAEA;AAAA;AAAA;AAAA;AAIA;AAAA;AAAA;AAAA;AAAA;EAKE;AACA;EACA;AACA;EACA;AACA;EACA;AACA;;;AAGF;AAAA;AAAA;AAAA;AAIA;AAAA;AAEE;EACA;;;AAGF;AAAA;AAAA;AAAA;AAIA;AAAA;AAEE;EACA;;;AAGF;AAAA;AAAA;AAGA;AAAA;AAAA;AAAA;EAIE;;;AAGF;AAAA;AAAA;AAGA;AAAA;AAAA;AAAA;EAIE;EACA;;;AAGF;AAAA;AAAA;AAGA;AAAA;AAAA;AAAA;EAIE;;;AAGF;AAAA;AAAA;AAGA;EACE;;;AAGF;AAAA;AAAA;AAAA;AAAA;AAAA;AAMA;EACE;EACQ;AACR;EACA;AACA;EACA;AACA;EACA;AACA;EACA;AACA;EACA;AACA;;;AAGF;AAAA;AAAA;AAGA;EACE;;;AAGF;AAAA;AAAA;AAGA;EACE;;;AAGF;AAAA;AAAA;AAAA;AAIA;AAAA;EAEE;EACQ;AACR;EACA;AACA;;;AAGF;AAAA;AAAA;AAGA;AAAA;EAEE;;;AAGF;AAAA;AAAA;AAAA;AAIA;EACE;AACA;EACA;AACA;;;AAGF;AAAA;AAAA;AAGA;EACE;;;AAGF;AAAA;AAAA;AAAA;AAIA;EACE;AACA;EACA;AACA;;;AAGF;AAAA;AAEA;AAAA;AAAA;AAGA;EACE;;;AAGF;AAAA;AAAA;AAGA;EACE;;;AAGF;AAAA;AAEA;AAAA;AAAA;AAGA;EACE;;;AAGF;AAAA;AAAA;AAGA;EACE;;;AAGF;AAAA;AAAA;EAGE;EACQ;;;AAGV;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGF;EACE;EACA;EACA;EACQ;;;AAGV;EACE;;;AAGF;EACE;;;AAGF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACI;EACI;EACR;EACI;EACI;EACR;EACA;EACQ;EACR;;;AAGF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACI;EACJ;EACI;EACI;EACR;;;AAGF;AAAA;EAEE;;;AAGF;EACE;EACA;EACA;;;AAGF;EACE;EACA;EACA;EACA;;;AAGF;AAAA;EAEE;;;AAGF;EACE;EACQ;;;AAGV;EACE;IACE;IACQ;;EAEV;IACE;IACQ;;EAEV;IACE;IACQ;;EAEV;IACE;IACQ;;EAEV;IACE;IACQ;;;AAIZ;EACE;IACE;IACQ;;EAEV;IACE;IACQ;;EAEV;IACE;IACQ;;EAEV;IACE;IACQ;;EAEV;IACE;IACQ;;;AAIZ;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACQ;;;AAGV;EACE;EACA;;;AAGF;EACE;EACA;EACA;EACA;EACQ;;;AAGV;EACE;EACA;EACA;;;AAGF;EACE;IACE;IACA;IACQ;;EAEV;IACE;IACA;IACQ;;;AAIZ;EACE;IACE;IACA;IACQ;;EAEV;IACE;IACA;IACQ;;;AAIZ;EACE;EACA;EACQ;EACR;;;AAGF;EACE;EACA;EACA;EACA;EACI;EACI;EACR;EACA;EACA;;;AAGF;EACE;;;AAGF;EACE;;;AAGF;EACE;EACA;EACA;EACA;;;AAGF;EACE;;;AAGF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGF;AAAA;EAEE;EACA;;;AAGF;EACE;EACA;EACA;EACA;EACA;;;AAGF;EACE;EACA;EACA;EACA;EACI;EACI;EACR;EACI;EACI;EACR;EACA;EACA;;;AAGF;EACE;;;AAGF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGF;AAAA;EAEE;EACA;EACA;;;AAGF;EACE;;;AAGF;EACE;EACA;;;AAGF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACQ;EACR;EACA;EACQ;;;AAGV;EACE;IACE;IACA;;;AAIJ;EACE;IACE;IACA;IACQ;;EAEV;IACE;IACA;IACQ;;;AAIZ;EACE;IACE;IACA;IACQ;;EAEV;IACE;IACA;IACQ;;;AAGZ%22,%22file%22:%22style.css%22%7D */
+.cart-item h2 {
+  margin: 0 0 0.5rem 0;
+  color: #363636;
+}
+
+.summary {
+  width: 10rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  font-weight: bold;
+  color: #8a2b06;
+}
+
+.amount {
+  font-weight: bold;
+  border: 1px solid #ccc;
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  color: #363636;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .actions {
+    flex-direction: row;
+  }
+}
+.cart-item button {
+  font: inherit;
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: #8a2b06;
+  border: 1px solid #8a2b06;
+  width: 3rem;
+  text-align: center;
+  border-radius: 6px;
+  background-color: transparent;
+  cursor: pointer;
+  margin-left: 1rem;
+  margin: 0.25rem;
+}
+
+.cart-item button:hover,
+.cart-item button:active {
+  background-color: #8a2b06;
+  color: white;
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../sass/_normalize.scss%22,%22../sass/_variables.scss%22,%22../sass/_layout.scss%22,%22../sass/_header.scss%22,%22../sass/_headerBasketButton.scss%22,%22../sass/_productsText.scss%22,%22../sass/_availableProducts.scss%22,%22../sass/_card.scss%22,%22../sass/_productItem.scss%22,%22../sass/_productItemForm.scss%22,%22../sass/_basket.scss%22,%22../sass/_modal.scss%22,%22../sass/_basketItem.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAAA;AAEA;AAAA;AAGA;AAAA;AAAA;AAAA;AAKA;EACE;AAAmB;EACnB;AAAgC;;;AAGlC;AAAA;AAGA;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAAA;AAAA;AAKA;EACE;EACA;;;AAGF;AAAA;AAGA;AAAA;AAAA;AAAA;AAKA;EACE;AAAyB;EACzB;AAAW;EACX;AAAmB;;;AAGrB;AAAA;AAAA;AAAA;AAKA;EACE;AAAmC;EACnC;AAAgB;;;AAGlB;AAAA;AAGA;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAAA;AAAA;AAKA;EACE;AAAqB;EACrB;AAA4B;EAC5B;AAAmC;;;AAGrC;AAAA;AAAA;AAIA;AAAA;EAEE;;;AAGF;AAAA;AAAA;AAAA;AAKA;AAAA;AAAA;EAGE;AAAmC;EACnC;AAAgB;;;AAGlB;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAAA;AAAA;AAKA;AAAA;EAEE;EACA;EACA;EACA;;;AAGF;EACE;;;AAGF;EACE;;;AAGF;AAAA;AAGA;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAGA;AAAA;AAAA;AAAA;AAKA;AAAA;AAAA;AAAA;AAAA;EAKE;AAAsB;EACtB;AAAiB;EACjB;AAAmB;EACnB;AAAW;;;AAGb;AAAA;AAAA;AAAA;AAKA;AAAA;AAEE;EACA;;;AAGF;AAAA;AAAA;AAAA;AAKA;AAAA;AAEE;EACA;;;AAGF;AAAA;AAAA;AAIA;AAAA;AAAA;AAAA;EAIE;;;AAGF;AAAA;AAAA;AAIA;AAAA;AAAA;AAAA;EAIE;EACA;;;AAGF;AAAA;AAAA;AAIA;AAAA;AAAA;AAAA;EAIE;;;AAGF;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAAA;AAAA;AAAA;AAAA;AAOA;EACE;AAAwB;EACxB;AAAgB;EAChB;AAAgB;EAChB;AAAiB;EACjB;AAAY;EACZ;AAAqB;;;AAGvB;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAAA;AAAA;AAKA;AAAA;EAEE;AAAwB;EACxB;AAAY;;;AAGd;AAAA;AAAA;AAIA;AAAA;EAEE;;;AAGF;AAAA;AAAA;AAAA;AAKA;EACE;AAA+B;EAC/B;AAAsB;;;AAGxB;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAAA;AAAA;AAKA;EACE;AAA4B;EAC5B;AAAe;;;AAGjB;AAAA;AAGA;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAGA;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAAA;AAIA;EACE;;;AAGF;AAAA;AAAA;EAGE;;;AClWF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;ACZF;EACE;EACA;EACA;;;AAGF;EACE;;;AAGF;EACE;;;ACXF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;ACbF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGF;AAAA;EAEE;;;AAGF;EACE;EACA;EACA;;;AAGF;EACE;EACA;EACA;EACA;;;AAGF;AAAA;EAEE;;;AAGF;EACE;;;AAGF;EACE;IACE;;EAEF;IACE;;EAEF;IACE;;EAEF;IACE;;EAEF;IACE;;;ACtDJ;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGF;EACE;EACA;;;AChBF;EACE;EACA;EACA;EACA;;;AAGF;EACE;EACA;EACA;;;AAGF;EACE;IACE;IACA;;EAGF;IACE;IACA;;;ACrBJ;EACE;EACA;EACA;;;ACHF;EACE;EACA;EACA;EACA;EACA;;;AAGF;EACE;;;AAGF;EACE;;;AAGF;EACE;EACA;EACA;EACA;;;ACpBF;EACE;;;AAGF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGF;AAAA;EAEE;EACA;;;ACjBF;EACE;EACA;EACA;EACA;EACA;;;AAGF;EACE;EACA;EACA;EACA;EACA;EACA;;;AAGF;EACE;;;AAGF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGF;AAAA;EAEE;EACA;EACA;;;AAGF;EACE;;;AAGF;EACE;EACA;;;AC5CF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGF;EACE;IACE;IACA;;;AAIJ;EACE;IACE;IACA;;EAEF;IACE;IACA;;;ACpCJ;EACE;EACA;EACA;EACA;EACA;EACA;;;AAGF;EACE;EACA;;;AAGF;EACE;EACA;EACA;EACA;;;AAGF;EACE;EACA;;;AAGF;EACE;EACA;EACA;EACA;EACA;;;AAGF;EACE;EACA;;;AAGF;EACE;IACE;;;AAIJ;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGF;AAAA;EAEE;EACA%22,%22file%22:%22style.css%22%7D */
