@@ -10,9 +10,13 @@ export default function Basket(props) {
   const totalAmount = `HUF ${basketCtx.totalAmount}`;
   const hasItems = basketCtx.items.length > 0;
 
-  const basketItemRemoveHandler = (id) => {};
+  const basketItemRemoveHandler = (id) => {
+    basketCtx.removeItem(id);
+  };
 
-  const basketItemAddHandler = (item) => {};
+  const basketItemAddHandler = (item) => {
+    basketCtx.addItem({ ...item, amount: 1 });
+  };
 
   const basketItems = (
     <ul className="basket-items">
