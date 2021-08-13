@@ -1,5 +1,6 @@
 import Card from '../UI/Card';
 import ProductItem from './ProductItem/ProductItem';
+import productslist from '../productslist';
 
 const products = [
   {
@@ -29,7 +30,7 @@ const products = [
 ];
 
 export default function AvailableProducts() {
-  const productsList = products.map((product) => (
+  const productsList = productslist.map((product) => (
     <ProductItem
       key={product.id}
       id={product.id}
