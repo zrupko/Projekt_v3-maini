@@ -10,8 +10,6 @@ function getStatusText(count) {
   switch (count) {
     case 0:
       return 'Nincs ilyen termék';
-    case 1:
-      return 'Egy találat a keresésre';
     default:
       return `${count} találat a keresésre`;
   }
