@@ -8,6 +8,7 @@ export default function AvailableProducts() {
       key={product.id}
       id={product.id}
       name={product.name}
+      image={product.image}
       description={product.description}
       price={product.price}
     />

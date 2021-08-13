@@ -11,7 +11,7 @@ export default function FilterForm({
   return (
     <form className="filter" onSubmit={(e) => e.preventDefault()}>
       <div className="filter__search">
-        <label htmlFor="keyword">Suchbegriff</label>
+        <label htmlFor="keyword">Keresés</label>
         <div>
           <input
             type="text"
@@ -21,7 +21,7 @@ export default function FilterForm({
           />
           <button
             type="button"
-            aria-label="Suchbegriff löschen"
+            aria-label="Töröl"
             onClick={() => setKeyword('')}
           >
             &times;
@@ -29,14 +29,14 @@ export default function FilterForm({
         </div>
       </div>
       <div className="filter__category">
-        <label htmlFor="category">Kategorie</label>
+        <label htmlFor="category">Kategória</label>
         <select
           name="category"
           id="category"
           onChange={(e) => setSelectedCategory(parseInt(e.target.value))}
           value={selectedCategory}
         >
-          <option value="0">Alle Kategorien</option>
+          <option value="0">Összes termék</option>
           {categories.map(({ categoryId, name }) => (
             <option key={categoryId} value={categoryId}>
               {name}
@@ -45,7 +45,7 @@ export default function FilterForm({
         </select>
         <div>
           <label>
-            Sonderangebote&nbsp;
+            Akciós termékek&nbsp;
             <input
               type="checkbox"
               checked={saleOnly}

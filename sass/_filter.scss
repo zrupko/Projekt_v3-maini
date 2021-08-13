@@ -1,13 +1,13 @@
 .filter label {
   font-weight: bold;
+  line-height: 2rem;
 }
 .filter__search input {
   height: 1.5rem;
-  width: 10rem;
+  width: 11.5rem;
 }
 .filter__search > div {
   display: flex;
-  align-items: center;
 }
 .filter__search button {
   padding: 0;
@@ -19,10 +19,11 @@
 }
 
 .filter-status {
-  margin: 2rem 0;
+  margin: 1rem 0;
   font-size: 2rem;
+  color: var(--myblue);
   font-weight: bold;
 }
 .filter-status--no-results {
-  color: tomato;
+  color: var(--myorange);
 }

@@ -6,7 +6,7 @@ export default function Header(props) {
   return (
     <Fragment>
       <header className="header">
-        <h1>Ajto//Ablak</h1>
+        <h1>AJTO//ABLAK</h1>
         <HeaderBasketButton onClick={props.onShowBasket} />
       </header>
       <div></div>
