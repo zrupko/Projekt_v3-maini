@@ -1,0 +1,28 @@
+.filter label {
+  font-weight: bold;
+}
+.filter__search input {
+  height: 1.5rem;
+  width: 10rem;
+}
+.filter__search > div {
+  display: flex;
+  align-items: center;
+}
+.filter__search button {
+  padding: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  line-height: 1;
+  margin-left: 0;
+  border-radius: 0;
+}
+
+.filter-status {
+  margin: 2rem 0;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.filter-status--no-results {
+  color: tomato;
+}

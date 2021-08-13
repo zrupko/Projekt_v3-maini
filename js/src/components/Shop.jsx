@@ -4,6 +4,7 @@ import Header from './Layout/Header';
 import Products from './Products/Products';
 import Basket from './Basket/Basket';
 import BasketProvider from '../store/BasketProvider';
+import Filter from './Layout/Filter';
 
 export default function Shop() {
   const [basketShow, setBasketShow] = useState(false);
@@ -20,8 +21,9 @@ export default function Shop() {
     <BasketProvider>
       {basketShow && <Basket onClose={hideBasketHandler} />}
       <Header onShowBasket={showBasketHandler} />
-      <main>
+      <main className="container">
         <Products />
+        <Filter />
       </main>
     </BasketProvider>
   );
