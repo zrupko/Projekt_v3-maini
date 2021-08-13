@@ -476,6 +476,7 @@ body {
 }
 
 .card {
+  margin-top: 3rem;
   padding: 1rem;
   -webkit-box-shadow: var(--box-shadow);
           box-shadow: var(--box-shadow);
