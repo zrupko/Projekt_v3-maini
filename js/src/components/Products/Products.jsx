@@ -1,10 +1,12 @@
 import AvailableProducts from './AvailableProducts';
 import { Fragment } from 'react';
 
-export default function Products() {
+// FIXME - probably unnecessary to have this component in between Store and AvailableProducts
+// ! we are using component drilling and this is a lot of extra code
+export default function Products({ filteredProducts }) {
   return (
     <Fragment>
-      <AvailableProducts />
+      <AvailableProducts filteredProducts={filteredProducts} />
     </Fragment>
   );
 }

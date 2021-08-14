@@ -1,101 +1,123 @@
-import { useState, useEffect } from 'react';
-
-import productslist from '../productslist';
 import FilterForm from './FilterForm';
 import FilterStatus from './FilterStatus';
 
-export default function Filter() {
-  const [keyword, setKeyword] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState(0);
-  const [saleOnly, setSaleOnly] = useState(false);
-  const [loading, setLoading] = useState(true);
+export default function Filter({
+  keyword,
+  saleOnly,
+  selectedCategory,
+  filteredProducts,
+  handleKeywordChange,
+  handleKeywordReset,
+  handleCategoryChange,
+  handleSaleOnlyChange,
+}) {
+  // ! this logic has to be shared with other components such as the AvailableProducts so we move it up to the mutual parent component Shop
 
-  useEffect(() => {
-    const url = new URL(window.location.href);
+  // const [keyword, setKeyword] = useState('');
+  // const [selectedCategory, setSelectedCategory] = useState(0);
+  // const [saleOnly, setSaleOnly] = useState(false);
+  // const [loading, setLoading] = useState(true);
 
-    const oldKeyword = url.searchParams.get('keyword');
-    if (oldKeyword) {
-      setKeyword(oldKeyword);
-    }
+  // // ! This is what we need for rendering the products
+  // const filteredProducts = useProductFilter(
+  //   productslist,
+  //   keyword,
+  //   selectedCategory,
+  //   saleOnly
+  // );
 
-    const oldSaleOnly = url.searchParams.get('sale');
-    if (oldSaleOnly === 'true') {
-      setSaleOnly(true);
-    }
+  // console.log('*** filteredProducts *** ', filteredProducts)
 
-    const oldCategory = url.searchParams.get('category');
-    if (oldCategory) {
-      setSelectedCategory(parseInt(oldCategory));
-    }
+  // // ! event handlers
+  // const handleKeywordChange = ({ target: { value } }) => setKeyword(value)
+  // const handleKeywordReset = () => setKeyword('')
+  // const handleCategoryChange = ({ target: { value } }) => {
+  //   setSelectedCategory(parseInt(value))
+  // }
+  // const handleSaleOnlyChange = ({ target: { value } }) => setSaleOnly(!value)
 
-    setLoading(false);
-  }, []);
+  // useEffect(() => {
+  //   const url = new URL(window.location.href);
 
-  useEffect(() => {
-    const url = new URL(window.location.href);
+  //   const oldKeyword = url.searchParams.get('keyword');
+  //   if (oldKeyword) {
+  //     setKeyword(oldKeyword);
+  //   }
 
-    url.searchParams.delete('keyword');
+  //   const oldSaleOnly = url.searchParams.get('sale');
+  //   if (oldSaleOnly === 'true') {
+  //     setSaleOnly(true);
+  //   }
 
-    if (keyword) {
-      url.searchParams.set('keyword', keyword);
-    }
+  //   const oldCategory = url.searchParams.get('category');
+  //   if (oldCategory) {
+  //     setSelectedCategory(parseInt(oldCategory));
+  //   }
 
-    url.searchParams.delete('sale');
-    if (saleOnly) {
-      url.searchParams.set('sale', saleOnly);
-    }
+  //   setLoading(false);
+  // }, []);
 
-    url.searchParams.delete('category');
+  // useEffect(() => {
+  //   const url = new URL(window.location.href);
 
-    if (selectedCategory) {
-      url.searchParams.set('category', selectedCategory);
-    }
+  //   url.searchParams.delete('keyword');
 
-    window.history.replaceState({}, '', url);
-  }, [keyword, saleOnly, selectedCategory]);
+  //   if (keyword) {
+  //     url.searchParams.set('keyword', keyword);
+  //   }
 
-  const filteredProducts = getFilteredProducts(
-    productslist,
-    keyword,
-    selectedCategory,
-    saleOnly
-  );
+  //   url.searchParams.delete('sale');
+  //   if (saleOnly) {
+  //     url.searchParams.set('sale', saleOnly);
+  //   }
 
-  if (loading) {
-    return null;
-  }
+  //   url.searchParams.delete('category');
+
+  //   if (selectedCategory) {
+  //     url.searchParams.set('category', selectedCategory);
+  //   }
+
+  //   window.history.replaceState({}, '', url);
+  // }, [keyword, saleOnly, selectedCategory]);
+
+  // if (loading) {
+  //   return null;
+  // }
 
   return (
     <div className="filter">
       <FilterForm
         keyword={keyword}
-        setKeyword={setKeyword}
         selectedCategory={selectedCategory}
-        setSelectedCategory={setSelectedCategory}
         saleOnly={saleOnly}
-        setSaleOnly={setSaleOnly}
+        onKeywordChange={handleKeywordChange}
+        onKeywordReset={handleKeywordReset}
+        onCategoryChange={handleCategoryChange}
+        onSaleOnlyChange={handleSaleOnlyChange}
       />
       <FilterStatus count={filteredProducts.length} />
     </div>
   );
 }
 
-function getFilteredProducts(
-  productslist,
-  keyword,
-  selectedCategory,
-  saleOnly
-) {
-  const keywordRegExp = new RegExp(keyword, 'i');
+// ! this is basically a custom hook so moved it -> src/hooks/useProductFilter.js
 
-  const noKeywordFilter = keyword.length < 2;
-  const noCategoryFilter = selectedCategory === 0;
-  const noSaleFilter = saleOnly === false;
+// function getFilteredProducts(
+//   productslist,
+//   keyword,
+//   selectedCategory,
+//   saleOnly
+// ) {
+//   const keywordRegExp = new RegExp(keyword, 'i');
 
-  const filteredProducts = productslist
-    .filter(({ name }) => noKeywordFilter || keywordRegExp.test(name))
-    .filter(({ category }) => noCategoryFilter || category === selectedCategory)
-    .filter(({ sale }) => noSaleFilter || sale);
+//   const noKeywordFilter = keyword.length < 2;
+//   const noCategoryFilter = selectedCategory === 0;
+//   const noSaleFilter = saleOnly === false;
 
-  return filteredProducts;
-}
+//   const filteredProducts = productslist
+//     .filter(({ name }) => noKeywordFilter || keywordRegExp.test(name))
+//     .filter(({ category }) => noCategoryFilter || category === selectedCategory)
+//     .filter(({ sale }) => noSaleFilter || sale);
+
+//   return filteredProducts;
+// }
