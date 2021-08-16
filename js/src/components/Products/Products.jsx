@@ -1,10 +1,10 @@
 import AvailableProducts from './AvailableProducts';
 import { Fragment } from 'react';
 
-export default function Products() {
+export default function Products({ filteredProducts }) {
   return (
     <Fragment>
-      <AvailableProducts />
+      <AvailableProducts filteredProducts={filteredProducts} />
     </Fragment>
   );
 }

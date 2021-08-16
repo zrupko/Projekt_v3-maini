@@ -2,11 +2,12 @@ import { categories } from './../productslist';
 
 export default function FilterForm({
   keyword,
-  setKeyword,
   selectedCategory,
-  setSelectedCategory,
   saleOnly,
-  setSaleOnly,
+  onKeywordChange,
+  onKeywordReset,
+  onCategoryChange,
+  onSaleOnlyChange,
 }) {
   return (
     <form className="filter" onSubmit={(e) => e.preventDefault()}>
@@ -17,13 +18,9 @@ export default function FilterForm({
             type="text"
             id="keyword"
             value={keyword}
-            onChange={(e) => setKeyword(e.target.value)}
+            onChange={onKeywordChange}
           />
-          <button
-            type="button"
-            aria-label="Töröl"
-            onClick={() => setKeyword('')}
-          >
+          <button type="button" aria-label="Töröl" onClick={onKeywordReset}>
             &times;
           </button>
         </div>
@@ -33,7 +30,7 @@ export default function FilterForm({
         <select
           name="category"
           id="category"
-          onChange={(e) => setSelectedCategory(parseInt(e.target.value))}
+          onChange={onCategoryChange}
           value={selectedCategory}
         >
           <option value="0">Összes termék</option>
@@ -49,7 +46,7 @@ export default function FilterForm({
             <input
               type="checkbox"
               checked={saleOnly}
-              onChange={(e) => setSaleOnly(e.target.checked)}
+              onChange={onSaleOnlyChange}
             />
           </label>
         </div>
